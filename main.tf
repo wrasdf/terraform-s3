@@ -29,7 +29,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "encrypt" {
       sse_algorithm     = var.kms_key_arn != null ? "aws:kms" : "AES256"
       kms_master_key_id = var.kms_key_arn != null ? var.kms_key_arn : null
     }
-    
+
     # Best practice: Enable bucket key to reduce KMS costs if using KMS
     bucket_key_enabled = var.kms_key_arn != null ? true : null
   }
