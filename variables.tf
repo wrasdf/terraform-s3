@@ -30,6 +30,7 @@ variable "bucket_namespace" {
 variable "tags" {
   description = "Resource tagging"
   type        = map(string)
+  default     = {}
 }
 
 variable "force_destroy" {
